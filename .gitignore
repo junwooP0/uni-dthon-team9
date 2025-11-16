@@ -1,0 +1,44 @@
+# 체크포인트 (용량 큼)
+checkpoints/
+*.pth
+*.pt
+
+# 데이터 (용량 큼)
+train_valid/
+test/
+sample/
+data/
+
+# 출력 파일
+outputs/
+*.csv
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# 환경
+.env
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
