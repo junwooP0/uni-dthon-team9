@@ -57,27 +57,27 @@ TEST_JPG_DIR: str = "/path/to/data/test/images"
 
 ### 기본 학습 실행
 ```bash
-python train.py \
+python3 train.py \
     --epochs 30 \
     --batch_size 64 \
     --learning_rate 1e-4 \
-    --backbone resnet34 \
+    --backbone resnet18 \
     --img_size 512 \
     --dim 256
 ```
 
 ### Backbone 옵션
 지원되는 백본:
-- `resnet18`
-- `resnet34` (기본값)
+- `resnet18` (기본값)
+- `resnet34`
 - `resnet50`
 - `efficientnet_b3`
 - `efficientnet_v2_s`
 
 ### 학습 중단 후 재개
 ```bash
-python train.py \
-    --resume ./checkpoints/resnet34_epoch10.pth \
+python3 train.py \
+    --resume ./checkpoints/resnet18_epoch10.pth \
     --epochs 30
 ```
 
@@ -89,18 +89,18 @@ python train.py \
 
 ### 테스트 데이터 예측
 ```bash
-python test.py predict \
+python3 test.py predict \
     --ckpt ./checkpoints/best_model.pth \
     --json_dir /path/to/test/query \
     --jpg_dir /path/to/test/images \
     --batch_size 32 \
     --out_csv ./outputs/preds/test_pred.csv \
-    --backbone resnet34
+    --backbone resnet18
 ```
 
 ### 제출 파일 생성
 ```bash
-python test.py submit \
+python3 test.py submit \
     --csv ./outputs/preds/test_pred.csv \
     --out_zip ./outputs/submission.zip
 ```
@@ -158,7 +158,7 @@ pip install -r requirements.txt
 
 ### 2. 학습 실행 (30 epochs, ResNet34)
 ```bash
-python train.py \
+python3 train.py \
     --epochs 30 \
     --batch_size 64 \
     --learning_rate 1e-4 \
@@ -170,7 +170,7 @@ python train.py \
 ### 3. 최적 모델로 추론
 ```bash
 # 테스트 예측
-python test.py predict \
+python3 test.py predict \
     --ckpt ./checkpoints/resnet34_epoch30.pth \
     --json_dir /path/to/test/query \
     --jpg_dir /path/to/test/images \
@@ -179,7 +179,7 @@ python test.py predict \
     --backbone resnet34
 
 # 제출 파일 생성
-python test.py submit \
+python3 test.py submit \
     --csv ./outputs/preds/test_pred.csv \
     --out_zip ./outputs/submission.zip
 ```
